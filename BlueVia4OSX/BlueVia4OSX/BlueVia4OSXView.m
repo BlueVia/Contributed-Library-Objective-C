@@ -131,9 +131,8 @@
 }
 - (void) gotAccessToken:(NSNumber*)status data:(NSDictionary*)data {
     [self defaultResponse:status data:data];
-    NSString *accessKey = [[data objectForKey:@"AccessKey"] retain];
-    NSString *accessSecret = [[data objectForKey:@"AccessSecret"] retain];
-    [bluevia setAccessTokenFromKey:accessKey andSecret:accessSecret];
+    // NSString *accessKey = [[data objectForKey:@"AccessKey"] retain];
+    // NSString *accessSecret = [[data objectForKey:@"AccessSecret"] retain];
     [bluevia saveAccessTokenToKeychain];
     [progressIndicator stopAnimation:self];
 }
