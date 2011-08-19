@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F19BA5C13EDCBA500C76A72 /* BlueVia_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F19BA5A13EDCBA500C76A72 /* BlueVia_Logo.png */; };
+		6F1CBACD13EF280200E71115 /* BlueViaConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F1CBACC13EF280200E71115 /* BlueViaConfig.plist */; };
+		6F1CBAD313EF337700E71115 /* BlueVia.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6F1CBAD213EF337700E71115 /* BlueVia.icns */; };
+		6F1EC02613EEA78300AAEDB7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1EC02513EEA78300AAEDB7 /* libz.dylib */; };
+		6F1F43CF13EEF9F500D6D8E0 /* GoogelMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1F43CC13EEF9F500D6D8E0 /* GoogelMaps.m */; };
+		6F1F43D013EEF9F500D6D8E0 /* GoogleMaps.html in Resources */ = {isa = PBXBuildFile; fileRef = 6F1F43CE13EEF9F500D6D8E0 /* GoogleMaps.html */; };
+		6F1F43DD13EEFE1400D6D8E0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1F43DC13EEFE1400D6D8E0 /* WebKit.framework */; };
+		6F1F43DF13EF02FB00D6D8E0 /* GoogleMaps.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1F43DE13EF02FB00D6D8E0 /* GoogleMaps.xib */; };
+		6F261B3413FC4CA50083B682 /* BlueVia.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AF213FC4CA50083B682 /* BlueVia.m */; };
+		6F261B3513FC4CA50083B682 /* BlueViaMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AF413FC4CA50083B682 /* BlueViaMutableURLRequest.m */; };
+		6F261B3613FC4CA50083B682 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AF713FC4CA50083B682 /* Base64Transcoder.c */; };
+		6F261B3713FC4CA50083B682 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AFA13FC4CA50083B682 /* NSMutableURLRequest+Parameters.m */; };
+		6F261B3813FC4CA50083B682 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AFC13FC4CA50083B682 /* NSString+URLEncoding.m */; };
+		6F261B3913FC4CA50083B682 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261AFE13FC4CA50083B682 /* NSURL+Base.m */; };
+		6F261B3A13FC4CA50083B682 /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0013FC4CA50083B682 /* OAAsynchronousDataFetcher.m */; };
+		6F261B3B13FC4CA50083B682 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0213FC4CA50083B682 /* OAConsumer.m */; };
+		6F261B3C13FC4CA50083B682 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0413FC4CA50083B682 /* OADataFetcher.m */; };
+		6F261B3D13FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0613FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.m */; };
+		6F261B3E13FC4CA50083B682 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0813FC4CA50083B682 /* OAMutableURLRequest.m */; };
+		6F261B3F13FC4CA50083B682 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0A13FC4CA50083B682 /* OAPlaintextSignatureProvider.m */; };
+		6F261B4013FC4CA50083B682 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0C13FC4CA50083B682 /* OARequestParameter.m */; };
+		6F261B4113FC4CA50083B682 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B0E13FC4CA50083B682 /* OAServiceTicket.m */; };
+		6F261B4213FC4CA50083B682 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1113FC4CA50083B682 /* OAToken.m */; };
+		6F261B4313FC4CA50083B682 /* OAToken_KeychainExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1313FC4CA50083B682 /* OAToken_KeychainExtensions.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		6F261B4413FC4CA50083B682 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1713FC4CA50083B682 /* NSObject+SBJson.m */; };
+		6F261B4513FC4CA50083B682 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1A13FC4CA50083B682 /* SBJsonParser.m */; };
+		6F261B4613FC4CA50083B682 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1C13FC4CA50083B682 /* SBJsonStreamParser.m */; };
+		6F261B4713FC4CA50083B682 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B1E13FC4CA50083B682 /* SBJsonStreamParserAccumulator.m */; };
+		6F261B4813FC4CA50083B682 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2013FC4CA50083B682 /* SBJsonStreamParserAdapter.m */; };
+		6F261B4913FC4CA50083B682 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2213FC4CA50083B682 /* SBJsonStreamParserState.m */; };
+		6F261B4A13FC4CA50083B682 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2413FC4CA50083B682 /* SBJsonStreamWriter.m */; };
+		6F261B4B13FC4CA50083B682 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2613FC4CA50083B682 /* SBJsonStreamWriterAccumulator.m */; };
+		6F261B4C13FC4CA50083B682 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2813FC4CA50083B682 /* SBJsonStreamWriterState.m */; };
+		6F261B4D13FC4CA50083B682 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2A13FC4CA50083B682 /* SBJsonTokeniser.m */; };
+		6F261B4E13FC4CA50083B682 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2C13FC4CA50083B682 /* SBJsonUTF8Stream.m */; };
+		6F261B4F13FC4CA50083B682 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B2E13FC4CA50083B682 /* SBJsonWriter.m */; };
+		6F261B5013FC4CA50083B682 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B3113FC4CA50083B682 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		6F261B5113FC4CA50083B682 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F261B3313FC4CA50083B682 /* TBXML.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		6F326BE113EC5F630089F7BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F326BE013EC5F630089F7BC /* Cocoa.framework */; };
+		6F326BEB13EC5F630089F7BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F326BE913EC5F630089F7BC /* InfoPlist.strings */; };
+		6F326BEE13EC5F630089F7BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F326BED13EC5F630089F7BC /* main.m */; };
+		6F326BF113EC5F630089F7BC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6F326BEF13EC5F630089F7BC /* Credits.rtf */; };
+		6F326BF413EC5F630089F7BC /* BlueVia4OSXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F326BF313EC5F630089F7BC /* BlueVia4OSXAppDelegate.m */; };
+		6F326BF713EC5F630089F7BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F326BF513EC5F630089F7BC /* MainMenu.xib */; };
+		6F326C9513EC694C0089F7BC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F326C9413EC694C0089F7BC /* Security.framework */; };
+		6FB8571213EC8FC2009E2D52 /* BlueVia4OSXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8571113EC8FC2009E2D52 /* BlueVia4OSXView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F19BA5A13EDCBA500C76A72 /* BlueVia_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueVia_Logo.png; sourceTree = "<group>"; };
+		6F1CBACC13EF280200E71115 /* BlueViaConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlueViaConfig.plist; sourceTree = "<group>"; };
+		6F1CBAD213EF337700E71115 /* BlueVia.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = BlueVia.icns; sourceTree = "<group>"; };
+		6F1EC02513EEA78300AAEDB7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		6F1F43CC13EEF9F500D6D8E0 /* GoogelMaps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogelMaps.m; sourceTree = "<group>"; };
+		6F1F43CD13EEF9F500D6D8E0 /* GoogleMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMaps.h; sourceTree = "<group>"; };
+		6F1F43CE13EEF9F500D6D8E0 /* GoogleMaps.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleMaps.html; sourceTree = "<group>"; };
+		6F1F43DC13EEFE1400D6D8E0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6F1F43DE13EF02FB00D6D8E0 /* GoogleMaps.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMaps.xib; sourceTree = "<group>"; };
+		6F261AF113FC4CA50083B682 /* BlueVia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueVia.h; sourceTree = "<group>"; };
+		6F261AF213FC4CA50083B682 /* BlueVia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueVia.m; sourceTree = "<group>"; };
+		6F261AF313FC4CA50083B682 /* BlueViaMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueViaMutableURLRequest.h; sourceTree = "<group>"; };
+		6F261AF413FC4CA50083B682 /* BlueViaMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueViaMutableURLRequest.m; sourceTree = "<group>"; };
+		6F261AF713FC4CA50083B682 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		6F261AF813FC4CA50083B682 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		6F261AF913FC4CA50083B682 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		6F261AFA13FC4CA50083B682 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		6F261AFB13FC4CA50083B682 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		6F261AFC13FC4CA50083B682 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		6F261AFD13FC4CA50083B682 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
+		6F261AFE13FC4CA50083B682 /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
+		6F261AFF13FC4CA50083B682 /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
+		6F261B0013FC4CA50083B682 /* OAAsynchronousDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAAsynchronousDataFetcher.m; sourceTree = "<group>"; };
+		6F261B0113FC4CA50083B682 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
+		6F261B0213FC4CA50083B682 /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAConsumer.m; sourceTree = "<group>"; };
+		6F261B0313FC4CA50083B682 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
+		6F261B0413FC4CA50083B682 /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADataFetcher.m; sourceTree = "<group>"; };
+		6F261B0513FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		6F261B0613FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		6F261B0713FC4CA50083B682 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
+		6F261B0813FC4CA50083B682 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAMutableURLRequest.m; sourceTree = "<group>"; };
+		6F261B0913FC4CA50083B682 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		6F261B0A13FC4CA50083B682 /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		6F261B0B13FC4CA50083B682 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
+		6F261B0C13FC4CA50083B682 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
+		6F261B0D13FC4CA50083B682 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
+		6F261B0E13FC4CA50083B682 /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAServiceTicket.m; sourceTree = "<group>"; };
+		6F261B0F13FC4CA50083B682 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
+		6F261B1013FC4CA50083B682 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
+		6F261B1113FC4CA50083B682 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
+		6F261B1213FC4CA50083B682 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken_KeychainExtensions.h; sourceTree = "<group>"; };
+		6F261B1313FC4CA50083B682 /* OAToken_KeychainExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken_KeychainExtensions.m; sourceTree = "<group>"; };
+		6F261B1413FC4CA50083B682 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
+		6F261B1613FC4CA50083B682 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		6F261B1713FC4CA50083B682 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		6F261B1813FC4CA50083B682 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		6F261B1913FC4CA50083B682 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		6F261B1A13FC4CA50083B682 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		6F261B1B13FC4CA50083B682 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		6F261B1C13FC4CA50083B682 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		6F261B1D13FC4CA50083B682 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		6F261B1E13FC4CA50083B682 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		6F261B1F13FC4CA50083B682 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		6F261B2013FC4CA50083B682 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		6F261B2113FC4CA50083B682 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		6F261B2213FC4CA50083B682 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		6F261B2313FC4CA50083B682 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		6F261B2413FC4CA50083B682 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		6F261B2513FC4CA50083B682 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		6F261B2613FC4CA50083B682 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		6F261B2713FC4CA50083B682 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		6F261B2813FC4CA50083B682 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		6F261B2913FC4CA50083B682 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		6F261B2A13FC4CA50083B682 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		6F261B2B13FC4CA50083B682 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		6F261B2C13FC4CA50083B682 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		6F261B2D13FC4CA50083B682 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		6F261B2E13FC4CA50083B682 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		6F261B3013FC4CA50083B682 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		6F261B3113FC4CA50083B682 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		6F261B3213FC4CA50083B682 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		6F261B3313FC4CA50083B682 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		6F326BDC13EC5F630089F7BC /* BlueVia4OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueVia4OSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F326BE013EC5F630089F7BC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6F326BE313EC5F630089F7BC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6F326BE413EC5F630089F7BC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6F326BE513EC5F630089F7BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6F326BE813EC5F630089F7BC /* BlueVia4OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlueVia4OSX-Info.plist"; sourceTree = "<group>"; };
+		6F326BEA13EC5F630089F7BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F326BEC13EC5F630089F7BC /* BlueVia4OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlueVia4OSX-Prefix.pch"; sourceTree = "<group>"; };
+		6F326BED13EC5F630089F7BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F326BF013EC5F630089F7BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6F326BF213EC5F630089F7BC /* BlueVia4OSXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueVia4OSXAppDelegate.h; sourceTree = "<group>"; };
+		6F326BF313EC5F630089F7BC /* BlueVia4OSXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueVia4OSXAppDelegate.m; sourceTree = "<group>"; };
+		6F326BF613EC5F630089F7BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6F326C9413EC694C0089F7BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6FB8571013EC8FC2009E2D52 /* BlueVia4OSXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueVia4OSXView.h; sourceTree = "<group>"; };
+		6FB8571113EC8FC2009E2D52 /* BlueVia4OSXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueVia4OSXView.m; sourceTree = "<group>"; };
+		6FFD943D13F6AEDF00603233 /* BlueViaConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueViaConfig.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F326BD913EC5F630089F7BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F1F43DD13EEFE1400D6D8E0 /* WebKit.framework in Frameworks */,
+				6F1EC02613EEA78300AAEDB7 /* libz.dylib in Frameworks */,
+				6F326C9513EC694C0089F7BC /* Security.framework in Frameworks */,
+				6F326BE113EC5F630089F7BC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F261AF013FC4CA50083B682 /* BlueVia */ = {
+			isa = PBXGroup;
+			children = (
+				6F261AF113FC4CA50083B682 /* BlueVia.h */,
+				6F261AF213FC4CA50083B682 /* BlueVia.m */,
+				6F261AF313FC4CA50083B682 /* BlueViaMutableURLRequest.h */,
+				6F261AF413FC4CA50083B682 /* BlueViaMutableURLRequest.m */,
+			);
+			name = BlueVia;
+			path = ../../BlueVia4ObjectiveC/BlueVia4ObjectiveC/BlueVia;
+			sourceTree = "<group>";
+		};
+		6F261AF513FC4CA50083B682 /* OAuthConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				6F261AF613FC4CA50083B682 /* Crypto */,
+				6F261AF913FC4CA50083B682 /* NSMutableURLRequest+Parameters.h */,
+				6F261AFA13FC4CA50083B682 /* NSMutableURLRequest+Parameters.m */,
+				6F261AFB13FC4CA50083B682 /* NSString+URLEncoding.h */,
+				6F261AFC13FC4CA50083B682 /* NSString+URLEncoding.m */,
+				6F261AFD13FC4CA50083B682 /* NSURL+Base.h */,
+				6F261AFE13FC4CA50083B682 /* NSURL+Base.m */,
+				6F261AFF13FC4CA50083B682 /* OAAsynchronousDataFetcher.h */,
+				6F261B0013FC4CA50083B682 /* OAAsynchronousDataFetcher.m */,
+				6F261B0113FC4CA50083B682 /* OAConsumer.h */,
+				6F261B0213FC4CA50083B682 /* OAConsumer.m */,
+				6F261B0313FC4CA50083B682 /* OADataFetcher.h */,
+				6F261B0413FC4CA50083B682 /* OADataFetcher.m */,
+				6F261B0513FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.h */,
+				6F261B0613FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.m */,
+				6F261B0713FC4CA50083B682 /* OAMutableURLRequest.h */,
+				6F261B0813FC4CA50083B682 /* OAMutableURLRequest.m */,
+				6F261B0913FC4CA50083B682 /* OAPlaintextSignatureProvider.h */,
+				6F261B0A13FC4CA50083B682 /* OAPlaintextSignatureProvider.m */,
+				6F261B0B13FC4CA50083B682 /* OARequestParameter.h */,
+				6F261B0C13FC4CA50083B682 /* OARequestParameter.m */,
+				6F261B0D13FC4CA50083B682 /* OAServiceTicket.h */,
+				6F261B0E13FC4CA50083B682 /* OAServiceTicket.m */,
+				6F261B0F13FC4CA50083B682 /* OASignatureProviding.h */,
+				6F261B1013FC4CA50083B682 /* OAToken.h */,
+				6F261B1113FC4CA50083B682 /* OAToken.m */,
+				6F261B1213FC4CA50083B682 /* OAToken_KeychainExtensions.h */,
+				6F261B1313FC4CA50083B682 /* OAToken_KeychainExtensions.m */,
+				6F261B1413FC4CA50083B682 /* OAuthConsumer.h */,
+			);
+			name = OAuthConsumer;
+			path = ../../BlueVia4ObjectiveC/BlueVia4ObjectiveC/OAuthConsumer;
+			sourceTree = "<group>";
+		};
+		6F261AF613FC4CA50083B682 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				6F261AF713FC4CA50083B682 /* Base64Transcoder.c */,
+				6F261AF813FC4CA50083B682 /* Base64Transcoder.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		6F261B1513FC4CA50083B682 /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				6F261B1613FC4CA50083B682 /* NSObject+SBJson.h */,
+				6F261B1713FC4CA50083B682 /* NSObject+SBJson.m */,
+				6F261B1813FC4CA50083B682 /* SBJson.h */,
+				6F261B1913FC4CA50083B682 /* SBJsonParser.h */,
+				6F261B1A13FC4CA50083B682 /* SBJsonParser.m */,
+				6F261B1B13FC4CA50083B682 /* SBJsonStreamParser.h */,
+				6F261B1C13FC4CA50083B682 /* SBJsonStreamParser.m */,
+				6F261B1D13FC4CA50083B682 /* SBJsonStreamParserAccumulator.h */,
+				6F261B1E13FC4CA50083B682 /* SBJsonStreamParserAccumulator.m */,
+				6F261B1F13FC4CA50083B682 /* SBJsonStreamParserAdapter.h */,
+				6F261B2013FC4CA50083B682 /* SBJsonStreamParserAdapter.m */,
+				6F261B2113FC4CA50083B682 /* SBJsonStreamParserState.h */,
+				6F261B2213FC4CA50083B682 /* SBJsonStreamParserState.m */,
+				6F261B2313FC4CA50083B682 /* SBJsonStreamWriter.h */,
+				6F261B2413FC4CA50083B682 /* SBJsonStreamWriter.m */,
+				6F261B2513FC4CA50083B682 /* SBJsonStreamWriterAccumulator.h */,
+				6F261B2613FC4CA50083B682 /* SBJsonStreamWriterAccumulator.m */,
+				6F261B2713FC4CA50083B682 /* SBJsonStreamWriterState.h */,
+				6F261B2813FC4CA50083B682 /* SBJsonStreamWriterState.m */,
+				6F261B2913FC4CA50083B682 /* SBJsonTokeniser.h */,
+				6F261B2A13FC4CA50083B682 /* SBJsonTokeniser.m */,
+				6F261B2B13FC4CA50083B682 /* SBJsonUTF8Stream.h */,
+				6F261B2C13FC4CA50083B682 /* SBJsonUTF8Stream.m */,
+				6F261B2D13FC4CA50083B682 /* SBJsonWriter.h */,
+				6F261B2E13FC4CA50083B682 /* SBJsonWriter.m */,
+			);
+			name = SBJson;
+			path = ../../BlueVia4ObjectiveC/BlueVia4ObjectiveC/SBJson;
+			sourceTree = "<group>";
+		};
+		6F261B2F13FC4CA50083B682 /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				6F261B3013FC4CA50083B682 /* NSDataAdditions.h */,
+				6F261B3113FC4CA50083B682 /* NSDataAdditions.m */,
+				6F261B3213FC4CA50083B682 /* TBXML.h */,
+				6F261B3313FC4CA50083B682 /* TBXML.m */,
+			);
+			name = TBXML;
+			path = ../../BlueVia4ObjectiveC/BlueVia4ObjectiveC/TBXML;
+			sourceTree = "<group>";
+		};
+		6F326BD113EC5F630089F7BC = {
+			isa = PBXGroup;
+			children = (
+				6F326BE613EC5F630089F7BC /* BlueVia4OSX */,
+				6F326BDF13EC5F630089F7BC /* Frameworks */,
+				6F326BDD13EC5F630089F7BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F326BDD13EC5F630089F7BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F326BDC13EC5F630089F7BC /* BlueVia4OSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F326BDF13EC5F630089F7BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F326BE013EC5F630089F7BC /* Cocoa.framework */,
+				6F326BE513EC5F630089F7BC /* Foundation.framework */,
+				6F326C9413EC694C0089F7BC /* Security.framework */,
+				6F1F43DC13EEFE1400D6D8E0 /* WebKit.framework */,
+				6F1EC02513EEA78300AAEDB7 /* libz.dylib */,
+				6F326BE213EC5F630089F7BC /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F326BE213EC5F630089F7BC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F326BE313EC5F630089F7BC /* AppKit.framework */,
+				6F326BE413EC5F630089F7BC /* CoreData.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6F326BE613EC5F630089F7BC /* BlueVia4OSX */ = {
+			isa = PBXGroup;
+			children = (
+				6F261AF013FC4CA50083B682 /* BlueVia */,
+				6F261AF513FC4CA50083B682 /* OAuthConsumer */,
+				6F261B1513FC4CA50083B682 /* SBJson */,
+				6F261B2F13FC4CA50083B682 /* TBXML */,
+				6F19BA5A13EDCBA500C76A72 /* BlueVia_Logo.png */,
+				6F1CBAD213EF337700E71115 /* BlueVia.icns */,
+				6FFD943D13F6AEDF00603233 /* BlueViaConfig.h */,
+				6F326BF213EC5F630089F7BC /* BlueVia4OSXAppDelegate.h */,
+				6F326BF313EC5F630089F7BC /* BlueVia4OSXAppDelegate.m */,
+				6FB8571013EC8FC2009E2D52 /* BlueVia4OSXView.h */,
+				6FB8571113EC8FC2009E2D52 /* BlueVia4OSXView.m */,
+				6F1F43CD13EEF9F500D6D8E0 /* GoogleMaps.h */,
+				6F1F43CC13EEF9F500D6D8E0 /* GoogelMaps.m */,
+				6F1F43CE13EEF9F500D6D8E0 /* GoogleMaps.html */,
+				6F1F43DE13EF02FB00D6D8E0 /* GoogleMaps.xib */,
+				6F326BF513EC5F630089F7BC /* MainMenu.xib */,
+				6F1CBACC13EF280200E71115 /* BlueViaConfig.plist */,
+				6F326BE713EC5F630089F7BC /* Supporting Files */,
+			);
+			path = BlueVia4OSX;
+			sourceTree = "<group>";
+		};
+		6F326BE713EC5F630089F7BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F326BE813EC5F630089F7BC /* BlueVia4OSX-Info.plist */,
+				6F326BE913EC5F630089F7BC /* InfoPlist.strings */,
+				6F326BEC13EC5F630089F7BC /* BlueVia4OSX-Prefix.pch */,
+				6F326BED13EC5F630089F7BC /* main.m */,
+				6F326BEF13EC5F630089F7BC /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F326BDB13EC5F630089F7BC /* BlueVia4OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F326BFA13EC5F630089F7BC /* Build configuration list for PBXNativeTarget "BlueVia4OSX" */;
+			buildPhases = (
+				6F326BD813EC5F630089F7BC /* Sources */,
+				6F326BD913EC5F630089F7BC /* Frameworks */,
+				6F326BDA13EC5F630089F7BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueVia4OSX;
+			productName = BlueVia4OSX;
+			productReference = 6F326BDC13EC5F630089F7BC /* BlueVia4OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F326BD313EC5F630089F7BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = O2;
+			};
+			buildConfigurationList = 6F326BD613EC5F630089F7BC /* Build configuration list for PBXProject "BlueVia4OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = 6F326BD113EC5F630089F7BC;
+			productRefGroup = 6F326BDD13EC5F630089F7BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F326BDB13EC5F630089F7BC /* BlueVia4OSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F326BDA13EC5F630089F7BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F326BEB13EC5F630089F7BC /* InfoPlist.strings in Resources */,
+				6F326BF113EC5F630089F7BC /* Credits.rtf in Resources */,
+				6F326BF713EC5F630089F7BC /* MainMenu.xib in Resources */,
+				6F19BA5C13EDCBA500C76A72 /* BlueVia_Logo.png in Resources */,
+				6F1F43D013EEF9F500D6D8E0 /* GoogleMaps.html in Resources */,
+				6F1F43DF13EF02FB00D6D8E0 /* GoogleMaps.xib in Resources */,
+				6F1CBACD13EF280200E71115 /* BlueViaConfig.plist in Resources */,
+				6F1CBAD313EF337700E71115 /* BlueVia.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F326BD813EC5F630089F7BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F326BEE13EC5F630089F7BC /* main.m in Sources */,
+				6F326BF413EC5F630089F7BC /* BlueVia4OSXAppDelegate.m in Sources */,
+				6FB8571213EC8FC2009E2D52 /* BlueVia4OSXView.m in Sources */,
+				6F1F43CF13EEF9F500D6D8E0 /* GoogelMaps.m in Sources */,
+				6F261B3413FC4CA50083B682 /* BlueVia.m in Sources */,
+				6F261B3513FC4CA50083B682 /* BlueViaMutableURLRequest.m in Sources */,
+				6F261B3613FC4CA50083B682 /* Base64Transcoder.c in Sources */,
+				6F261B3713FC4CA50083B682 /* NSMutableURLRequest+Parameters.m in Sources */,
+				6F261B3813FC4CA50083B682 /* NSString+URLEncoding.m in Sources */,
+				6F261B3913FC4CA50083B682 /* NSURL+Base.m in Sources */,
+				6F261B3A13FC4CA50083B682 /* OAAsynchronousDataFetcher.m in Sources */,
+				6F261B3B13FC4CA50083B682 /* OAConsumer.m in Sources */,
+				6F261B3C13FC4CA50083B682 /* OADataFetcher.m in Sources */,
+				6F261B3D13FC4CA50083B682 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				6F261B3E13FC4CA50083B682 /* OAMutableURLRequest.m in Sources */,
+				6F261B3F13FC4CA50083B682 /* OAPlaintextSignatureProvider.m in Sources */,
+				6F261B4013FC4CA50083B682 /* OARequestParameter.m in Sources */,
+				6F261B4113FC4CA50083B682 /* OAServiceTicket.m in Sources */,
+				6F261B4213FC4CA50083B682 /* OAToken.m in Sources */,
+				6F261B4313FC4CA50083B682 /* OAToken_KeychainExtensions.m in Sources */,
+				6F261B4413FC4CA50083B682 /* NSObject+SBJson.m in Sources */,
+				6F261B4513FC4CA50083B682 /* SBJsonParser.m in Sources */,
+				6F261B4613FC4CA50083B682 /* SBJsonStreamParser.m in Sources */,
+				6F261B4713FC4CA50083B682 /* SBJsonStreamParserAccumulator.m in Sources */,
+				6F261B4813FC4CA50083B682 /* SBJsonStreamParserAdapter.m in Sources */,
+				6F261B4913FC4CA50083B682 /* SBJsonStreamParserState.m in Sources */,
+				6F261B4A13FC4CA50083B682 /* SBJsonStreamWriter.m in Sources */,
+				6F261B4B13FC4CA50083B682 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				6F261B4C13FC4CA50083B682 /* SBJsonStreamWriterState.m in Sources */,
+				6F261B4D13FC4CA50083B682 /* SBJsonTokeniser.m in Sources */,
+				6F261B4E13FC4CA50083B682 /* SBJsonUTF8Stream.m in Sources */,
+				6F261B4F13FC4CA50083B682 /* SBJsonWriter.m in Sources */,
+				6F261B5013FC4CA50083B682 /* NSDataAdditions.m in Sources */,
+				6F261B5113FC4CA50083B682 /* TBXML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6F326BE913EC5F630089F7BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F326BEA13EC5F630089F7BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6F326BEF13EC5F630089F7BC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F326BF013EC5F630089F7BC /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6F326BF513EC5F630089F7BC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F326BF613EC5F630089F7BC /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F326BF813EC5F630089F7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6F326BF913EC5F630089F7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6F326BFB13EC5F630089F7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueVia4OSX/BlueVia4OSX-Prefix.pch";
+				INFOPLIST_FILE = "BlueVia4OSX/BlueVia4OSX-Info.plist";
+				PRODUCT_NAME = BlueVia4OSX;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6F326BFC13EC5F630089F7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlueVia4OSX/BlueVia4OSX-Prefix.pch";
+				INFOPLIST_FILE = "BlueVia4OSX/BlueVia4OSX-Info.plist";
+				PRODUCT_NAME = BlueVia4OSX;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F326BD613EC5F630089F7BC /* Build configuration list for PBXProject "BlueVia4OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F326BF813EC5F630089F7BC /* Debug */,
+				6F326BF913EC5F630089F7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F326BFA13EC5F630089F7BC /* Build configuration list for PBXNativeTarget "BlueVia4OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F326BFB13EC5F630089F7BC /* Debug */,
+				6F326BFC13EC5F630089F7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F326BD313EC5F630089F7BC /* Project object */;
+}

@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'BlueVia4OSX' target in the 'BlueVia4OSX' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#define SAFE_RELEASE(X)  [X release]; X = nil;
+#endif

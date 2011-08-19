@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ConsumerKey3Legged</key>
+	<string>MQ11080262615597</string>
+	<key>ConsumerSecret3legged</key>
+	<string>CjxI43529375</string>
+	<key>ConsumerKey2Legged</key>
+	<string>DD11080259932611</string>
+	<key>ConsumerSecret2Legged</key>
+	<string>BtdR24595077</string>
+	<key>AdSpaceId</key>
+	<string>10977</string>
+	<key>KeychainAppName</key>
+	<string>BlueVia4OSX</string>
+</dict>
+</plist>
