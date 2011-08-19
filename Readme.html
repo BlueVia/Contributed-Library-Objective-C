@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="keywords" content="MultiMarkdown, Markdown, XML, XHTML, XSLT, PDF"/>
+	<link type="text/css" rel="stylesheet" href="css/print.css"/>
+	<link type="text/css" rel="stylesheet" href="css/doc-less.css"/>
+</head>
+<body>
+<p>Feel free to download and mess around with this app, it may or may not be updated regularly, when it is we will publicise on our twitter feed (@BlueVia)</p>
+
+<h2 id="getyourxcodeenvironmentprepared">Get your X Code environment prepared</h2>
+
+<p>The library and the demo applications are written with XCode 4</p>
+
+<p>The library is in the folder &#8220;BlueVia4ObjectiveC&#8221; and includes 4 external packages:</p>
+
+<ul>
+<li><a href="http://code.google.com/p/oauth/">OACounsumer</a>: The core oAuth routines (Obj-c 2.0), slightly changed to support BlueVia (see github history)</li>
+<li><a href="http://http://www.tbxml.co.uk/TBXML/TBXML_Free.html">TBXML</a>: A small XML library to work with XML results from the Advertising API</li>
+<li><a href="/https://github.com/stig/json-framework">SBJSON</a>: A small JSON library</li>
+<li><a href="http://gorgando.com/blog/tag/sfhfkeychainutils">SFHFKeychainUtils</a>: A small library to easily read and write from the iPhone keychain</li>
+</ul>
+
+<p>Additionally the sample code contains two projects using the BlueVia library</p>
+
+<ul>
+<li>An iPhone application (tested with iOS SDK 4.2, 4.3). You can find it in the folder &#8220;BlueVia4iPhone&#8221;</li>
+<li>An OS X application (tested with OS X SDK 10.6). You can find it in the folder &#8220;BlueVia4OSX&#8221;</li>
+</ul>
+
+<p>Both projects use the files in the library (linked and not copied to the project folders)</p>
+
+<p>The three TabBar icons in the iPhone app are taken from <a href="http://http://glyphish.com/">GLYPHISH</a></p>
+
+<h2 id="sampleusageofallblueviaobjectivecroutines">Sample usage of all BlueVia Objective C routines</h2>
+
+<h3 id="setupandpersonalsettings">Setup and personal settings</h3>
+
+<p>Rename BlueViaConfig_template.h to BlueViaConfig.h</p>
+
+<p>For the iPhone app it looks like:</p>
+
+<pre><code>    static NSString* consumerKey1 =    @&quot;xxxxxxxxxxxxxxxx&quot;;
+    static NSString* consumerSecret1 = @&quot;xxxxxxxxxxxx&quot;;
+    static NSString* adSpaceId =       @&quot;xxxxx&quot;;
+    static NSString* appName =         @&quot;BlueVia4iPhone&quot;;   
+</code></pre>
+
+<p>And for the OS X app it has two more keys for a 2 legged Advertising call:</p>
+
+<pre><code>    static NSString* consumerKey1 =    @&quot;xxxxxxxxxxxxxxxx&quot;;
+    static NSString* consumerSecret1 = @&quot;xxxxxxxxxxxx&quot;;
+    static NSString* consumerKey2 =    @&quot;xxxxxxxxxxxxxxxx&quot;;
+    static NSString* consumerSecret2 = @&quot;xxxxxxxxxxxx&quot;;
+    static NSString* adSpaceId =       @&quot;xxxxx&quot;;
+    static NSString* appName =         @&quot;BlueVia4OSX&quot;;
+</code></pre>
+
+<p>Create an application at the <a href="https://www.bluevia.com">BlueVia portal</a> using all available API&#8217;s.
+The value of the field &#8220;key&#8221; needs to be added as &#8220;consumerKey1&#8221; in both apps. And the value of the field &#8220;secret&#8221; needs to be added as &#8220;consumerSecret1&#8221; in both apps.
+If you want to use 2-legged oAuth for Advertising, you additionally need to create an app in the BlueVia portal that only uses the Advertising API. Add &#8220;key&#8221; and &#8220;secret&#8221; in the same way to &#8220;consumerKey2&#8221; and &#8220;consumerSecret2&#8221;.
+In bosth cases add the ad Space Id that you receive with your app credentials.</p>
+
+<h3 id="initializetheblueviaobject">Initialize the BlueVia object</h3>
+
+<p>First, create the bluevia object</p>
+
+<pre><code>    //  3 legged credentials, oAuth DAnce required 
+    bluevia = [[BlueVia alloc] initWithConsumer:consumerKey1
+                                         secret:consumerSecret1
+                                      adSpaceId:adSpaceId
+                                        appName:appName
+                                       delegate:self];
+</code></pre>
+
+<p>Then try to retrieve the access token from the keychain (if it was written to it after the last successful appauthorisation)</p>
+
+<pre><code>    if([bluevia loadAccessTokenFromKeychain]) {
+        NSLog(@&quot;Access Token loaded from Keychain&quot;);
+    } else {
+        NSLog(@&quot;No Access Token found in Keychain&quot;); 
+    }
+</code></pre>
+
+<p>And set the bluvia Sandbox property to &#8220;YES&#8221; (no access to the real network) or &#8220;NO&#8221; (access the real network, e.g. send real SMS)</p>
+
+<pre><code>    [bluevia setSandbox:&quot;sandbox&quot;YES&quot;];
+</code></pre>
+
+<p>Note: The BlueVia library assumes that your code implements the BlueViaDelegate protocol:</p>
+
+<pre><code>    @protocol BlueViaDelegate &lt;NSObject&gt;
+    - (void) gotRequestToken:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) gotAccessToken:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) sendSmsResponse:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) trackSmsResponse:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) locateHandsetResponse:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) userContextResponse:(NSNumber*)status data:(NSDictionary*)data;
+    - (void) advertisingResponse:(NSNumber*)status data:(NSDictionary*)data;
+    @end
+</code></pre>
+
+<p>Each call to a bluevia method is asynchronous. The library will call (for both success and failure case) the respective protocol method in your code.</p>
+
+<h3 id="oauthdance">oAuth Dance</h3>
+
+<p>First step is to get a Request Token</p>
+
+<pre><code>    [bluevia fetchRequestToken:@&quot;oob&quot;]; 
+</code></pre>
+
+<p>You will receive the result in your implementation of &#8220;gotRequestToken&#8221;, e.g.:</p>
+
+<pre><code>    - (void) gotRequestToken:(NSNumber*)status data:(NSDictionary*)data {
+        if ([status longValue] == kBlueviaSuccess) {
+            NSString *authUrl = [data objectForKey:@&quot;authorizationUrl&quot;];
+            // do something with the authUrl, e.g. open Safari with it
+        } else {
+            NSLog(@&quot;Error requesting Requrest Token ...&quot;);
+        }
+    }
+</code></pre>
+
+<p>After successful Authorisation the oAuth portal will provide the user with a verifier, e.g. &#8220;437456&#8221;. This verifier needs to handed over to the next call:</p>
+
+<pre><code>    NSString *verifier = @&quot;437456&quot;;
+    [bluevia fetchAccessToken:verifier];
+</code></pre>
+
+<p>This time the result will be provided via &#8220;gotAccessToken&#8221; methos of the BlueViaDelegate protocol. Your implementation could look like this:</p>
+
+<pre><code>    - (void) gotAccessToken:(NSNumber*)status data:(NSDictionary*)data {
+        - (void) gotAccessToken:(NSNumber*)status data:(NSDictionary*)data {
+            [self defaultResponse:status data:data];                                 // optional
+            NSString *accessKey = [[data objectForKey:@&quot;AccessKey&quot;] retain];         // optional
+            NSString *accessSecret = [[data objectForKey:@&quot;AccessSecret&quot;] retain];   // optional
+
+            [bluevia saveAccessTokenToKeychain];
+        }
+    }
+</code></pre>
+
+<p>Here you could derive the Access Token Key and Secret, if you want to store it somewhere else or simply use the &#8220;saveAccessTokenToKeychain&#8221; method.</p>
+
+<h3 id="sendsmsandtrackdelivery">Send SMS and track delivery</h3>
+
+<pre><code>    NSString *msisdns = @&quot;447760xxxxxx,447763yyyyyy&quot;;
+    NSString *message = @&quot;Hello World&quot;;
+
+    if ([msisdns isNotEqualTo:@&quot;&quot;] &amp;&amp; [message isNotEqualTo:@&quot;&quot;]) {
+        NSNumber *smsId = [bluevia sendSMS:msisdns message:message];    
+    }
+</code></pre>
+
+<p>Since the call is asynchronous, the routine gives back an id for the request. This can be used in the &#8220;sendSmsResponse&#8221; method to associate a delivery URL (smsLocation) with its respective &#8220;send SMS &#8221; call, e.g. :</p>
+
+<pre><code>    - (void) sendSmsResponse:(NSNumber*)status data:(NSDictionary*)data {
+        if ([status longValue] == kBlueviaSuccess) {
+            NSNumber* smsId = [data objectForKey:@&quot;smsId&quot;];
+            NSString* smsLocation = [data objectForKey:@&quot;location&quot;];
+            [trackSms setValue:smsLocation forKey:[NSString stringWithFormat:@&quot;%@&quot;, smsId]];
+        }
+    }
+</code></pre>
+
+<p>Accordingly, to receive poll for the delivery notification, you would call (given that smsId is the one from above):</p>
+
+<pre><code>    NSString *location = [trackSms objectForKey:smsId];
+    if ([smsId isNotEqualTo:@&quot;&quot;] &amp;&amp; location) {
+        [bluevia trackSMS:location];
+    }
+</code></pre>
+
+<p>and the respective BlueViaDelegate method to implement is:</p>
+
+<pre><code>    - (void) trackSmsResponse:(NSNumber*)status data:(NSDictionary*)data;
+</code></pre>
+
+<p>Note: to use the real radio network, call:</p>
+
+<pre><code>    [bluevia setSandbox:&quot;sandbox&quot;NO&quot;];
+</code></pre>
+
+<p>This holds for all BlueVia calless below.</p>
+
+<h3 id="usercontextapi">User Context API</h3>
+
+<p>The actual call is:</p>
+
+<pre><code>    [bluevia userContext];
+</code></pre>
+
+<p>and the respective BlueViaDelegate method to implement is:</p>
+
+<pre><code>    - (void) userContextResponse:(NSNumber*)status data:(NSDictionary*)data;
+</code></pre>
+
+<h3 id="locationapi">Location API</h3>
+
+<p>The actual call is:</p>
+
+<pre><code>    [bluevia locateHandset];
+</code></pre>
+
+<p>and the respective BlueViaDelegate method to implement is:</p>
+
+<pre><code>    - (void) locateHandsetResponse:(NSNumber*)status data:(NSDictionary*)data;
+</code></pre>
+
+<h3 id="advertisingapi3leggedoauth">Advertising API (3 legged oAuth)</h3>
+
+<p>The actual call is:</p>
+
+<pre><code>    NSString *kwStr = @&quot;sports,entertainment&quot;;
+    NSArray *kwList = nil;
+    if ([kwStr isNotEqualTo:@&quot;&quot;]) {
+        kwList = [kwStr componentsSeparatedByString:@&quot;,&quot;];
+    }
+    [bluevia advertising3:textAds
+                userAgent:@&quot;&quot; 
+              keywordList:kwList 
+         protectionPolicy:1];    
+</code></pre>
+
+<p>and the respective BlueViaDelegate method to implement is:</p>
+
+<pre><code>     - (void) advertisingResponse:(NSNumber*)status data:(NSDictionary*)data;
+</code></pre>
+</body>
+</html>
