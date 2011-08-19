@@ -44,9 +44,9 @@
             realm:(NSString *)aRealm
 signatureProvider:(id<OASignatureProviding, NSObject>)aProvider 
 {
-    if (self = [super initWithURL:aUrl
+    if ((self = [super initWithURL:aUrl
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
+				  timeoutInterval:10.0]))
 	{    
 		consumer = [aConsumer retain];
 		
@@ -83,9 +83,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
             nonce:(NSString *)aNonce
         timestamp:(NSString *)aTimestamp 
 {
-	if (self = [super initWithURL:aUrl
+	if ((self = [super initWithURL:aUrl
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
+				  timeoutInterval:10.0]))
 	{    
 		consumer = [aConsumer retain];
 		
@@ -198,7 +198,7 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 {
     // OAuth Spec, Section 9.1.1 "Normalize Request Parameters"
     // build a sorted array of both request parameters and OAuth header parameters
-    NSMutableArray *parameterPairs = [NSMutableArray  arrayWithCapacity:(6 + [[self parameters] count])]; // 6 being the number of OAuth params in the Signature Base String
+    NSMutableArray *parameterPairs = [NSMutableArray  arrayWithCapacity:(7 + [[self parameters] count])]; // 7 being the number of OAuth params in the Signature Base String
     
 	[parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_consumer_key" value:consumer.key] URLEncodedNameValuePair]];
 	[parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_signature_method" value:[signatureProvider name]] URLEncodedNameValuePair]];
@@ -209,7 +209,14 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
     if (![token.key isEqualToString:@""]) {
         [parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_token" value:token.key] URLEncodedNameValuePair]];
     }
-    
+
+	// add extra oauth_ parameters for BlueVia to signature string
+    for(NSString *parameterName in [extraOAuthParameters allKeys]) {
+        [parameterPairs addObject:[[OARequestParameter requestParameterWithName:parameterName 
+                                                                          value:[extraOAuthParameters objectForKey:parameterName]
+                                   ] URLEncodedNameValuePair]];
+    }
+
     for (OARequestParameter *param in [self parameters]) {
         [parameterPairs addObject:[param URLEncodedNameValuePair]];
     }

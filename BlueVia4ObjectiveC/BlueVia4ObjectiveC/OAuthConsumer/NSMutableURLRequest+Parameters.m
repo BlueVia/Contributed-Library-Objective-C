@@ -31,15 +31,19 @@
 - (NSArray *)parameters 
 {
     NSString *encodedParameters;
-	BOOL shouldfree = NO;
     
     if ([[self HTTPMethod] isEqualToString:@"GET"] || [[self HTTPMethod] isEqualToString:@"DELETE"]) 
         encodedParameters = [[self URL] query];
 	else 
 	{
-        // POST, PUT
-		shouldfree = YES;
-        encodedParameters = [[NSString alloc] initWithData:[self HTTPBody] encoding:NSASCIIStringEncoding];
+        // POST, PUT, extract body only in case of application/x-www-form-urlencode
+        if ([[self valueForHTTPHeaderField:@"Content-Type"] isEqualToString:@"application/x-www-form-urlencoded"]) {
+            NSString *bodyStr = [[[NSString alloc] initWithData:[self HTTPBody]
+                                                       encoding:NSASCIIStringEncoding] autorelease];
+            encodedParameters = [NSString stringWithFormat:@"%@&%@", bodyStr, [[self URL] query]];
+        } else {
+            encodedParameters = [[self URL] query];
+        }
     }
     
     if ((encodedParameters == nil) || ([encodedParameters isEqualToString:@""]))
@@ -56,10 +60,6 @@
         [requestParameters addObject:parameter];
     }
     
-	// Cleanup
-	if (shouldfree)
-		[encodedParameters release];
-	
     return [requestParameters autorelease];
 }
 
@@ -82,10 +82,12 @@
     else 
 	{
         // POST, PUT
-        NSData *postData = [encodedParameterPairs dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-        [self setHTTPBody:postData];
-        [self setValue:[NSString stringWithFormat:@"%d", [postData length]] forHTTPHeaderField:@"Content-Length"];
-        [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        if ([[self valueForHTTPHeaderField:@"Content-Type"] isEqualToString:@"application/x-www-form-urlencoded"]) {
+            NSData *postData = [encodedParameterPairs dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            [self setHTTPBody:postData];
+            [self setValue:[NSString stringWithFormat:@"%d", [postData length]] forHTTPHeaderField:@"Content-Length"];
+            [self setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        }
     }
 }
 
