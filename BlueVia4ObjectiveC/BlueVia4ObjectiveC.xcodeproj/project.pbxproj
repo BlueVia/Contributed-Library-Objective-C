@@ -21,8 +21,8 @@
 		6F2951CD13F5959000129998 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951B813F5959000129998 /* SBJsonTokeniser.m */; };
 		6F2951CE13F5959000129998 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951BA13F5959000129998 /* SBJsonUTF8Stream.m */; };
 		6F2951CF13F5959000129998 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951BC13F5959000129998 /* SBJsonWriter.m */; };
-		6F2951D013F5959000129998 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951BF13F5959000129998 /* NSDataAdditions.m */; };
-		6F2951D113F5959000129998 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951C113F5959000129998 /* TBXML.m */; };
+		6F2951D013F5959000129998 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951BF13F5959000129998 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		6F2951D113F5959000129998 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951C113F5959000129998 /* TBXML.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		6F2951F313F5976C00129998 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951D513F5976C00129998 /* Base64Transcoder.c */; };
 		6F2951F413F5976C00129998 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951D813F5976C00129998 /* NSMutableURLRequest+Parameters.m */; };
 		6F2951F513F5976C00129998 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2951DA13F5976C00129998 /* NSString+URLEncoding.m */; };
