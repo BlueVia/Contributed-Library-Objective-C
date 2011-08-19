@@ -8,8 +8,14 @@
 
 #import "OAToken_KeychainExtensions.h"
 
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
+#else
+#import "SFHFKeychainUtils.h"
+#endif
+
 @implementation OAToken (OAToken_KeychainExtensions)
 
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
 - (id)initWithKeychainUsingAppName:(NSString *)name serviceProviderName:(NSString *)provider 
 {
     [super init];
@@ -90,5 +96,36 @@
                                                     );
 	return status;
 }
+#else
+- (id)initWithKeychainUsingAppName:(NSString *)name serviceProviderName:(NSString *)provider {
+    [super init];
+    
+    self.key = nil;
+    self.secret = nil;
+    NSError *error = nil;
+    NSString *keySecret = [SFHFKeychainUtils getPasswordForUsername:name 
+                                                     andServiceName:provider error:&error];
+    if (keySecret) {
+        NSArray* parts = [keySecret componentsSeparatedByString:@"&"];
+        self.key = [parts objectAtIndex:0];
+        self.secret = [parts objectAtIndex:1];
+    }
+    return self;
+}
 
+- (int)storeInDefaultKeychainWithAppName:(NSString *)name serviceProviderName:(NSString *)provider {
+    NSError *error = nil;
+    NSString* keySecret = [NSString stringWithFormat:@"%@&%@", self.key, self.secret];
+    [SFHFKeychainUtils storeUsername:name 
+                         andPassword:keySecret 
+                      forServiceName:provider 
+                      updateExisting:YES error:&error];
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+        return [error code];
+    } else {
+        return noErr;
+    }
+}
+#endif
 @end

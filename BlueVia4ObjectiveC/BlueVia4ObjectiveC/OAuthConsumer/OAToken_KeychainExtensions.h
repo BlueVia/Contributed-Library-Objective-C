@@ -14,6 +14,10 @@
 
 - (id)initWithKeychainUsingAppName:(NSString *)name serviceProviderName:(NSString *)provider;
 - (int)storeInDefaultKeychainWithAppName:(NSString *)name serviceProviderName:(NSString *)provider;
+
+#if (defined TARGET_IPHONE_SIMULATOR) || (defined (TARGET_OS_IPHONE))
+#else
 - (int)storeInKeychain:(SecKeychainRef)keychain appName:(NSString *)name serviceProviderName:(NSString *)provider;
+#endif
 
 @end
