@@ -26,7 +26,7 @@ Additionally the sample code contains two projects using the BlueVia library
 
 Both projects use the files in the library (linked and not copied to the project folders)
 
-The three TabBar icons in the iPhone app are taken from [GLYPHISH](http://http://glyphish.com/)
+The three TabBar icons in the iPhone app are taken from [GLYPHISH](http://glyphish.com/)
 	
 	
 ## Sample usage of all BlueVia Objective C routines
@@ -79,7 +79,7 @@ Then try to retrieve the access token from the keychain (if it was written to it
 
 And set the bluvia Sandbox property to "YES" (no access to the real network) or "NO" (access the real network, e.g. send real SMS)
 
-        [bluevia setSandbox:"sandbox"YES"];
+        [bluevia setSandbox:"YES"];
 
 Note: The BlueVia library assumes that your code implements the BlueViaDelegate protocol:
 
@@ -165,7 +165,7 @@ and the respective BlueViaDelegate method to implement is:
 
 Note: to use the real radio network, call:
 		
-        [bluevia setSandbox:"sandbox"NO"];
+        [bluevia setSandbox:"NO"];
 
 This holds for all BlueVia calless below.
 

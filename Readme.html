@@ -31,7 +31,7 @@
 
 <p>Both projects use the files in the library (linked and not copied to the project folders)</p>
 
-<p>The three TabBar icons in the iPhone app are taken from <a href="http://http://glyphish.com/">GLYPHISH</a></p>
+<p>The three TabBar icons in the iPhone app are taken from <a href="http://glyphish.com/">GLYPHISH</a></p>
 
 <h2 id="sampleusageofallblueviaobjectivecroutines">Sample usage of all BlueVia Objective C routines</h2>
 
@@ -85,7 +85,7 @@ In bosth cases add the ad Space Id that you receive with your app credentials.</
 
 <p>And set the bluvia Sandbox property to &#8220;YES&#8221; (no access to the real network) or &#8220;NO&#8221; (access the real network, e.g. send real SMS)</p>
 
-<pre><code>    [bluevia setSandbox:&quot;sandbox&quot;YES&quot;];
+<pre><code>    [bluevia setSandbox:&quot;YES&quot;];
 </code></pre>
 
 <p>Note: The BlueVia library assumes that your code implements the BlueViaDelegate protocol:</p>
@@ -153,7 +153,7 @@ In bosth cases add the ad Space Id that you receive with your app credentials.</
     }
 </code></pre>
 
-<p>Since the call is asynchronous, the routine gives back an id for the request. This can be used in the &#8220;sendSmsResponse&#8221; method to associate a delivery URL (smsLocation) with its respective &#8220;send SMS &#8221; call, e.g. :</p>
+<p>Since the call is asynchronous, the routine gives back an id for the request. This id can be used in the &#8220;sendSmsResponse&#8221; method to associate a delivery URL (smsLocation) with its respective &#8220;send SMS &#8221; call, e.g. :</p>
 
 <pre><code>    - (void) sendSmsResponse:(NSNumber*)status data:(NSDictionary*)data {
         if ([status longValue] == kBlueviaSuccess) {
@@ -179,7 +179,7 @@ In bosth cases add the ad Space Id that you receive with your app credentials.</
 
 <p>Note: to use the real radio network, call:</p>
 
-<pre><code>    [bluevia setSandbox:&quot;sandbox&quot;NO&quot;];
+<pre><code>    [bluevia setSandbox:&quot;NO&quot;];
 </code></pre>
 
 <p>This holds for all BlueVia calless below.</p>
