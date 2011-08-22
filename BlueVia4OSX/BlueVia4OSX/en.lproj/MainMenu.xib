@@ -1343,6 +1343,16 @@
 							<int key="NSvFlags">268</int>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSCustomView" id="884931325">
+									<reference key="NSNextResponder" ref="407896689"/>
+									<int key="NSvFlags">268</int>
+									<string key="NSFrame">{{20, 20}, {260, 358}}</string>
+									<reference key="NSSuperview" ref="407896689"/>
+									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView" ref="144237229"/>
+									<int key="NSViewLayerContentsRedrawPolicy">2</int>
+									<string key="NSClassName">WebView</string>
+								</object>
 								<object class="NSProgressIndicator" id="225511767">
 									<reference key="NSNextResponder" ref="407896689"/>
 									<int key="NSvFlags">1292</int>
@@ -1549,7 +1559,7 @@
 									<string key="NSFrame">{{20, 402}, {626, 5}}</string>
 									<reference key="NSSuperview" ref="407896689"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="144237229"/>
+									<reference key="NSNextKeyView" ref="884931325"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSOffsets">{0, 0}</string>
 									<object class="NSTextFieldCell" key="NSTitleCell">
@@ -1788,7 +1798,7 @@
 								<object class="NSTextField" id="144237229">
 									<reference key="NSNextResponder" ref="407896689"/>
 									<int key="NSvFlags">268</int>
-									<string key="NSFrame">{{20, 20}, {626, 358}}</string>
+									<string key="NSFrame">{{288, 20}, {358, 358}}</string>
 									<reference key="NSSuperview" ref="407896689"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="225511767"/>
@@ -2214,7 +2224,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="407896689"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
@@ -3066,6 +3076,14 @@
 						<reference key="destination" ref="225511767"/>
 					</object>
 					<int key="connectionID">659</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">adsWebView</string>
+						<reference key="source" ref="407896689"/>
+						<reference key="destination" ref="884931325"/>
+					</object>
+					<int key="connectionID">661</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4142,7 +4160,6 @@
 							<reference ref="861980302"/>
 							<reference ref="169577367"/>
 							<reference ref="421096248"/>
-							<reference ref="144237229"/>
 							<reference ref="41296447"/>
 							<reference ref="749715572"/>
 							<reference ref="36790338"/>
@@ -4154,6 +4171,8 @@
 							<reference ref="512371947"/>
 							<reference ref="456572567"/>
 							<reference ref="225511767"/>
+							<reference ref="884931325"/>
+							<reference ref="144237229"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
@@ -4594,6 +4613,11 @@
 						<reference key="object" ref="225511767"/>
 						<reference key="parent" ref="407896689"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">660</int>
+						<reference key="object" ref="884931325"/>
+						<reference key="parent" ref="407896689"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -4893,6 +4917,7 @@
 					<string>647.IBPluginDependency</string>
 					<string>648.IBPluginDependency</string>
 					<string>657.IBPluginDependency</string>
+					<string>660.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -5216,6 +5241,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -5255,7 +5281,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">659</int>
+			<int key="maxID">661</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5374,6 +5400,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>adsWebView</string>
 							<string>countryField</string>
 							<string>infoField</string>
 							<string>keywordsField</string>
@@ -5387,6 +5414,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>WebView</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
@@ -5403,6 +5431,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>adsWebView</string>
 							<string>countryField</string>
 							<string>infoField</string>
 							<string>keywordsField</string>
@@ -5416,6 +5445,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">adsWebView</string>
+								<string key="candidateClassName">WebView</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">countryField</string>
 								<string key="candidateClassName">NSTextField</string>

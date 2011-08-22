@@ -40,7 +40,7 @@
 @implementation BlueVia4OSXView
 
 @synthesize verifierField, infoField, msisdnField, messageField, smsIdField, 
-            targetIdField, countryField, keywordsField, logoView, progressIndicator;
+            targetIdField, countryField, keywordsField, logoView, progressIndicator, adsWebView;
 
 -(id) initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
@@ -71,7 +71,7 @@
     if([bluevia loadAccessTokenFromKeychain]) {
         [infoField setStringValue:@"Access Token loaded from Keychain"];
     } else {
-        [infoField setStringValue:@"No Access Token found in Keychain"]; 
+        [infoField setStringValue:@"No Access Token found in Keychain.\n\n\n1) Click on \"Request Token\" and follow the authorisation pages in the browser \n\n2) After successful authorisation copy the verifier into the \"Verifier\" field\n\n3) Finally press \"Access Token\" and the authorisation is finished and stored in your Mac's keychain"]; 
     }
     [bluevia setSandbox:sandbox];
     [bluevia2 setSandbox:sandbox];
@@ -80,6 +80,10 @@
     NSImage *imageFromBundle = [NSImage imageNamed:@"BlueVia_Logo.png"];
     [logoView setImage: imageFromBundle];
     textAds = NO;
+    
+    NSString *adsPage = @"<html><body style=\"font-size:13px; font-family:'Lucida Grande'\"><b>Web view:</b></br>Image ads will be shown here</body></html>";
+    [[adsWebView mainFrame] loadHTMLString:adsPage baseURL:[NSURL URLWithString:@"http://www.example.com"]];
+
 } 
 
 - (void) dealloc {
@@ -96,6 +100,7 @@
     SAFE_RELEASE(keywordsField)
     SAFE_RELEASE(countryField) 
     SAFE_RELEASE(progressIndicator)
+    SAFE_RELEASE(adsWebView)
 }
 
 
@@ -177,10 +182,21 @@
 }
      
 - (void) advertisingResponse:(NSNumber*)status data:(NSDictionary*)data {
-    NSString *creativeElement = [[[[data objectForKey:@"adResponse"] objectForKey:@"ad"] objectForKey:@"resource"] objectForKey:@"creative_element"]; 
     
     if ([status longValue] == kBlueviaSuccess) {
-        [self defaultResponse:status data:[NSString stringWithFormat:@"creative_element = %@", creativeElement]];    
+        NSDictionary *creativeElement = [[[[data objectForKey:@"adResponse"] objectForKey:@"ad"] objectForKey:@"resource"] objectForKey:@"creative_element"]; 
+        [self defaultResponse:status data:[NSString stringWithFormat:@"creative_element = %@", creativeElement]];
+        NSString *adsPage;
+        if ([[creativeElement objectForKey:@"type"] isEqualToString:@"image"]) {
+            NSString *url = [[creativeElement objectForKey:@"attribute"] objectForKey:@"name"];
+            NSString *interact = [[[creativeElement objectForKey:@"interaction"] objectForKey:@"attribute"] objectForKey:@"name"];
+            adsPage = [NSString stringWithFormat:@"<html><body><a href=\"%@\"><img src=\"%@\"></img></a></body></html>",
+                       interact, url];
+            NSLog(@"%@", adsPage);
+        } else {
+            adsPage = @"<html><body style=\"font-size:13px; font-family:'Lucida Grande'\"><b>Web view:</b></br>Image ads will be shown here</body></html>";
+        }
+        [[adsWebView mainFrame] loadHTMLString:adsPage baseURL:[NSURL URLWithString:@"http://www.example.com"]];
     } else {
         [self error:data];
     }

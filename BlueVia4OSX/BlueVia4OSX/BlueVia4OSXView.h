@@ -56,6 +56,7 @@
     BOOL         textAds;
     NSMutableDictionary *trackSms;
     NSProgressIndicator *progressIndicator;
+    WebView      *adsWebView;
     
     GoogleMaps *map;
 }
@@ -70,6 +71,7 @@
 @property (nonatomic, retain) IBOutlet NSTextField *keywordsField;
 @property (nonatomic, retain) IBOutlet NSTextField *countryField;
 @property (nonatomic, retain) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, retain) IBOutlet WebView *adsWebView;
 
 - (IBAction) sandboxClicked:(id)sender;
 
