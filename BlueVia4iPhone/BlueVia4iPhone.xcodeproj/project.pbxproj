@@ -62,6 +62,7 @@
 		6F5C7FB713F058B3000FBD09 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5C7FB613F058B3000FBD09 /* SystemConfiguration.framework */; };
 		6F5C7FBE13F077A2000FBD09 /* GoogleMaps.html in Resources */ = {isa = PBXBuildFile; fileRef = 6F5C7FBD13F077A2000FBD09 /* GoogleMaps.html */; };
 		6F5C7FC013F07B1E000FBD09 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5C7FBF13F07B1E000FBD09 /* MapKit.framework */; };
+		6FEAFAE014038D0D00A36902 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEAFADF14038D0D00A36902 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +162,7 @@
 		6F5C7FB613F058B3000FBD09 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6F5C7FBD13F077A2000FBD09 /* GoogleMaps.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleMaps.html; sourceTree = "<group>"; };
 		6F5C7FBF13F07B1E000FBD09 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6FEAFADF14038D0D00A36902 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6FFD93C713F67D3B00603233 /* BlueViaConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueViaConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FEAFAE014038D0D00A36902 /* CoreLocation.framework in Frameworks */,
 				6F5C7FC013F07B1E000FBD09 /* MapKit.framework in Frameworks */,
 				6F5C7FB713F058B3000FBD09 /* SystemConfiguration.framework in Frameworks */,
 				6F5C7FB513F058A3000FBD09 /* CFNetwork.framework in Frameworks */,
@@ -315,6 +318,7 @@
 		6F5C7F0713F04D3B000FBD09 = {
 			isa = PBXGroup;
 			children = (
+				6FEAFADF14038D0D00A36902 /* CoreLocation.framework */,
 				6F5C7FBF13F07B1E000FBD09 /* MapKit.framework */,
 				6F5C7F1C13F04D3B000FBD09 /* BlueVia4iPhone */,
 				6F5C7F1513F04D3B000FBD09 /* Frameworks */,
@@ -532,8 +536,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bernhard Walter (G7UHAJ95CE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bernhard Walter (G7UHAJ95CE)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -542,8 +546,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "DC349E3A-E5E6-40E7-9526-FF3FD5DDA9BF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC349E3A-E5E6-40E7-9526-FF3FD5DDA9BF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -552,16 +554,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bernhard Walter (G7UHAJ95CE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bernhard Walter (G7UHAJ95CE)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "DC349E3A-E5E6-40E7-9526-FF3FD5DDA9BF";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DC349E3A-E5E6-40E7-9526-FF3FD5DDA9BF";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

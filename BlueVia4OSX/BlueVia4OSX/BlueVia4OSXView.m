@@ -71,7 +71,7 @@
     if([bluevia loadAccessTokenFromKeychain]) {
         [infoField setStringValue:@"Access Token loaded from Keychain"];
     } else {
-        [infoField setStringValue:@"No Access Token found in Keychain.\n\n\n1) Click on \"Request Token\" and follow the authorisation pages in the browser \n\n2) After successful authorisation copy the verifier into the \"Verifier\" field\n\n3) Finally press \"Access Token\" and the authorisation is finished and stored in your Mac's keychain"]; 
+        [infoField setStringValue:@"No Access Token found in Keychain.\n\n\n1) Click on \"Request Token\" and follow the authorisation pages in the browser \n\n2) After successful authorisation copy the \"PIN Code\" into the \"Verifier\" field above\n\n3) Finally press \"Access Token\" and the authorisation is finished and stored in your Mac's keychain"]; 
     }
     [bluevia setSandbox:sandbox];
     [bluevia2 setSandbox:sandbox];
