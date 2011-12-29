@@ -166,6 +166,7 @@
         SBJsonParser *parser = [SBJsonParser new];
         NSDictionary *result = [parser objectWithString:responseBody error:nil];
         [self success:result selector:selector];
+        [parser release];
     } else {
         [self failure:status message:responseBody selector:selector];
     }
@@ -412,10 +413,10 @@
 #pragma mark Advertising
 
 - (NSString*) _generateUid {
-    CFUUIDRef theUUID = CFUUIDCreate(NULL);
-    CFStringRef string = CFUUIDCreateString(NULL, theUUID);
-    NSMakeCollectable(theUUID);
-    return (NSString *)string;
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    return [NSMakeCollectable(uuidStringRef) autorelease];
 }
 
 - (void) advertising:(OAToken*) token
@@ -473,7 +474,7 @@
     NSString *responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     if (status == 201) {
-        TBXML * tbxml = [[TBXML tbxmlWithXMLString:responseBody] retain];
+        TBXML * tbxml = [TBXML tbxmlWithXMLString:responseBody];
         NSDictionary *result = [NSDictionary dictionaryWithObjectsAndKeys:[self adResponseToDict:tbxml.rootXMLElement], 
                                                                           @"adResponse", 
                                                                           nil];

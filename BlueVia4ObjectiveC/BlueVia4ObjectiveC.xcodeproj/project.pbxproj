@@ -332,6 +332,7 @@
 		6FA2A9D313F594F600B14519 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = O2;
 			};
 			buildConfigurationList = 6FA2A9D613F594F600B14519 /* Build configuration list for PBXProject "BlueVia4ObjectiveC" */;
