@@ -151,8 +151,8 @@
 - (void) gotAccessToken:(NSNumber*)status data:(NSDictionary*)data {
     [self defaultResponse:status data:data];
     
-    NSString *accessKey = [[data objectForKey:@"AccessKey"] retain];
-    NSString *accessSecret = [[data objectForKey:@"AccessSecret"] retain];
+    NSString *accessKey = [data objectForKey:@"AccessKey"];
+    NSString *accessSecret = [data objectForKey:@"AccessSecret"];
     accessToken = [[OAToken alloc] initWithKey:accessKey secret:accessSecret];
 
     [bluevia setAccessToken:accessToken];
@@ -175,13 +175,14 @@
     NSString* url = webView.request.URL.absoluteString;
     NSArray* parts = [url componentsSeparatedByString:@"/"];
 
+    NSLog(@"%@", url);
     NSString *verifier = @"n/a";
-    if([parts count] == 8) {
+    if([parts count] == 9) {
         NSString *k1 = (NSString*)[parts objectAtIndex:4]; 
         NSString *k2 = (NSString*)[parts objectAtIndex:5]; 
         
         if([k1 isEqualToString:@"authorise"] && [k2 isEqualToString:@"success"]) {
-            verifier = [[(NSString*)[parts objectAtIndex:6] URLDecodedString] substringFromIndex:3];
+            verifier = [(NSString*)[parts objectAtIndex:7] URLDecodedString];
             [bluevia fetchAccessToken:verifier];
             authView.hidden = YES;
         }
